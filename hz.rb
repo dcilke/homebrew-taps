@@ -5,11 +5,11 @@
 class Hz < Formula
   desc ""
   homepage "https://github.com/dcilke/hz"
-  version "0.2.1"
+  version "0.3.0"
 
   on_macos do
-    url "https://github.com/dcilke/hz/releases/download/v0.2.1/hz_0.2.1_darwin_all.tar.gz"
-    sha256 "b19e010a26e55785d841903996ff23af4325dd817d21bb7d8232b00cdbb7c95d"
+    url "https://github.com/dcilke/hz/releases/download/v0.3.0/hz_0.3.0_darwin_all.tar.gz"
+    sha256 "a6e6d897064f7ac3ea3928f36c5203c5f1c90d871191335a171b9fc36b382683"
 
     def install
       bin.install "hz"
@@ -17,17 +17,17 @@ class Hz < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dcilke/hz/releases/download/v0.2.1/hz_0.2.1_linux_arm64.tar.gz"
-      sha256 "e2726a0e1d2e1514ba035c2fd35f248c61b0c011280ca4bf2e94fc7025ac0578"
+    if Hardware::CPU.intel?
+      url "https://github.com/dcilke/hz/releases/download/v0.3.0/hz_0.3.0_linux_amd64.tar.gz"
+      sha256 "9553aec18848a5222eaea096d92b9b277214fe0eddabd0318f8f63476133e75b"
 
       def install
         bin.install "hz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/dcilke/hz/releases/download/v0.2.1/hz_0.2.1_linux_amd64.tar.gz"
-      sha256 "61f431de785ae3b37a8d4ef5e515721248999288079c6650dac9088a6a9a2961"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/dcilke/hz/releases/download/v0.3.0/hz_0.3.0_linux_arm64.tar.gz"
+      sha256 "35b9d4bac85ee1dfd611d43f344f45ed29ad94582602fc474b866fed4b88da1b"
 
       def install
         bin.install "hz"
